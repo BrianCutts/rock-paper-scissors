@@ -21,46 +21,46 @@ function playRound(computerChoice, playerChoice) {
     if (playerChoice === "rock" ) {
         //if comp is rock
         if (computerChoice === "Rock") {
-            console.log("It's a draw! Computer also chose rock!");
+            return("It's a draw! Computer also chose rock!");
         }
         //if comp is scissors
         if (computerChoice === "Scissors") {
-            console.log("You Win! Rock beats Scissors!");
+            return("You Win! Rock beats Scissors!");
         }           
         //if comp is paper
         if (computerChoice === "Paper") {
-            console.log("You Lose! Paper beats Rock!");
+            return("You Lose! Paper beats Rock!");
         } 
     }
     //player chose paper
     if (playerChoice === "paper" ) {
         //if comp is rock
         if (computerChoice === "Rock") {
-            console.log("You Win! Paper beats Rock!");
+            return("You Win! Paper beats Rock!");
         }
         //if comp is scissors
         if (computerChoice === "Scissors") {
-            console.log("You Lose! Scissors beats Paper!");
+            return("You Lose! Scissors beats Paper!");
         }           
         //if comp is paper
         if (computerChoice === "Paper") {
-            console.log("It's a draw, computer also chose Paper!");
+            return("It's a draw, computer also chose Paper!");
         } 
     }
 
     if (playerChoice === "scissors" ) {
         //if comp is rock
         if (computerChoice === "Rock") {
-            console.log("You Lose! Rock beats Scissors!");
+            return("You Lose! Rock beats Scissors!");
         }
         //if comp is scissors
         if (computerChoice === "Scissors") {
-            console.log("It's a draw, computer also chose Scissors!");
+            return("It's a draw, computer also chose Scissors!");
             
         }           
         //if comp is paper
         if (computerChoice === "Paper") {
-            console.log("You Win! Scissors beats Paper!");
+            return("You Win! Scissors beats Paper!");
         } 
     }
     //returns You Lose or You Win with a description of how the choice
@@ -69,9 +69,12 @@ function playRound(computerChoice, playerChoice) {
 
 }
 
+for (let i = 0; i < 5; i ++) {
 const player = prompt("Your move: ")
 const compChoice = getComputerChoice();
 
-playRound(compChoice, player);
+const result = playRound(compChoice, player);
+console.log(result);
+}
 //Function that plays the game over 5 rounds, each time printing out the 
 //results with console.log
