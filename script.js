@@ -29,7 +29,7 @@ function playRound(computerChoice, playerChoice) {
         }           
         //if comp is paper
         if (computerChoice === "Paper") {
-            return("You Lose! Paper beats Rock!");
+            return("Computer chose paper. \n You Lose! Paper beats Rock!");
         } 
     }
     //player chose paper
@@ -44,7 +44,7 @@ function playRound(computerChoice, playerChoice) {
         }           
         //if comp is paper
         if (computerChoice === "Paper") {
-            return("It's a draw, computer also chose Paper!");
+            return("Computer also chose paper. \nIt's a draw!");
         } 
     }
 
@@ -60,7 +60,7 @@ function playRound(computerChoice, playerChoice) {
         }           
         //if comp is paper
         if (computerChoice === "Paper") {
-            return("You Win! Scissors beats Paper!");
+            return("Computer chose paper. \n You Win! Scissors beats Paper!");
         } 
     }
     //returns You Lose or You Win with a description of how the choice
