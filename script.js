@@ -13,8 +13,7 @@ function getComputerChoice() {
 
 //Function that takes computer choice and player choice 
 function playRound(computerChoice, playerChoice) {
-    //change player choice to all lowercase
-    playerChoice = playerChoice.toLowerCase();
+    
     //compares the two to see who won
     
     //player chose rock
@@ -68,13 +67,16 @@ function playRound(computerChoice, playerChoice) {
     //player input should be case insensitive
 
 }
+let player;
+let compChoice = getComputerChoice();
+const buttons = document.querySelectorAll('button');
+let result;
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        player = button.id;
+        let compChoice = getComputerChoice();
+        result = playRound(compChoice, player);
+        console.log(result);
+    });
+});
 
-for (let i = 0; i < 5; i ++) {
-const player = prompt("Your move: ")
-const compChoice = getComputerChoice();
-
-const result = playRound(compChoice, player);
-console.log(result);
-}
-//Function that plays the game over 5 rounds, each time printing out the 
-//results with console.log
