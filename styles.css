@@ -56,3 +56,36 @@ header {
     box-shadow: 0 2px #666;
     transform: translateY(4px);;
 }
+
+/* Modal for restarting the game*/
+
+.modal {
+    display: none;
+    position: fixed;
+    padding-top: 50px;
+    width: 200px;
+    height: 150px;
+    background-color: darkslategrey;
+    
+}
+
+.modal-content {
+    position: relative;
+    background-color: white;
+    padding: 20px;
+    margin: auto;
+}
+
+.modal.active {
+    display: block;
+}
+
+#retryButton {
+    display:flex;
+    justify-content: center;
+    color: lightgrey;
+}
+
+#retryButton:hover {
+    color: darkgray;
+}
