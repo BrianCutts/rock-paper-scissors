@@ -1,11 +1,8 @@
 
-let playerChoice = '';
 let roundVictor = '';
+let playerChoice = '';
 let playerScore = 0;
 let computerScore = 0;
-let resultString;
-
-
 
 
 function getComputerChoice() {
@@ -27,10 +24,11 @@ function playRound(computerChoice, playerChoice) {
     if ((computerChoice === "Rock" && playerChoice === "Scissors") || (computerChoice === "Paper" && playerChoice === "Rock") || (computerChoice === "Scissors" && playerChoice === "Paper")) {
         roundVictor = 'computer';
         computerScore++;
-    }
-    
+    }        
+}
 
-        
+function gameEndCheck() {
+    return playerScore === 5 || computerScore === 5
 }
 const playScorecard = document.getElementById('playerScore');
 const compScorecard = document.getElementById('compScore');
@@ -40,38 +38,33 @@ const paperBtn = document.getElementById("Paper");
 const scisBtn = document.getElementById("Scissors");
 
 scisBtn.addEventListener('click', () => gameStart('Scissors'))
-rockBtn.addEventListener('click', () => gameStart('Paper'))
-paperBtn.addEventListener('click', () => gameStart('Rock'))
+rockBtn.addEventListener('click', () => gameStart('Rock'))
+paperBtn.addEventListener('click', () => gameStart('Paper'))
 
 function gameStart(playersChoice) {
+    console.log(playersChoice);
         const computerChoice = getComputerChoice();
+        playerChoice = playersChoice;
         playRound(computerChoice, playersChoice);
-        roundScoring();
+        roundScoring(computerChoice);
+
 }
 
-function roundScoring() {
+function roundScoring(computerChoice) {
     if (roundVictor === 'player') {
-        resultMsg.textContent = "You Won!";
+        resultMsg.textContent = `Round Won! ${playerChoice} beats ${computerChoice}.`;
         playScorecard.textContent = `You: ${playerScore}`;
-
     }
     else if (roundVictor === 'computer') {
-        resultMsg.textContent = "You Lost!";
+        resultMsg.textContent = "Round Lost!";
         compScorecard.textContent = `Computer: ${computerScore}`;
 
     }else if (roundVictor === 'tie')
-        resultMsg.textContent = "Tie!"
+        resultMsg.textContent = "Tied the round"
 }
-    //returns You Lose or You Win
-    //player input should be case insensitive
+    
 
 
 
-const buttons = document.querySelectorAll('button');
-buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-        playerChoice = button.id;
-        
-    });
-});
+
 
