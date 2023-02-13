@@ -44,7 +44,7 @@ const endingModal = document.getElementById('restartModal');
 scisBtn.addEventListener('click', () => gameStart('Scissors'))
 rockBtn.addEventListener('click', () => gameStart('Rock'))
 paperBtn.addEventListener('click', () => gameStart('Paper'))
-retryBtn.addEventListener('click', () => restartGame);
+retryBtn.addEventListener('click', () => restartGame());
 
 function gameStart(playersChoice) {
     console.log(playersChoice);
@@ -54,7 +54,6 @@ function gameStart(playersChoice) {
         roundScoring(computerChoice);
 
         if (gameEndCheck()){
-            
             displayGameOver();
             gameOverMessage();
         }
@@ -75,7 +74,7 @@ function roundScoring(computerChoice) {
 }
 
 function displayGameOver() {
-    endingModal.classList.add('active')
+    endingModal.style.visibility = 'visible';
 }
 
 
@@ -88,7 +87,8 @@ function restartGame() {
     computerScore = 0;
     playScorecard.textContent = "Player: 0";
     compScorecard.textContent = "Computer: 0";
-    endingModal.classList.remove('active');
+    endingModal.style.visibility = 'hidden';
+    resultMsg.textContent = "First to five wins!";
 }
     
 

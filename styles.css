@@ -59,33 +59,26 @@ header {
 
 /* Modal for restarting the game*/
 
-.modal {
-    display: none;
-    position: fixed;
-    padding-top: 50px;
-    width: 200px;
-    height: 150px;
-    background-color: darkslategrey;
-    
+#restartModal {
+    visibility: hidden; 
+    display: flex;      
+    justify-content: center;
 }
 
 .modal-content {
-    position: relative;
     background-color: white;
     padding: 20px;
     margin: auto;
 }
 
-.modal.active {
-    display: block;
-}
+
 
 #retryButton {
     display:flex;
     justify-content: center;
-    color: lightgrey;
+    color: rgba(0, 0, 0, 0.5);
 }
 
 #retryButton:hover {
-    color: darkgray;
+    color: rgb(0, 0, 0);
 }
