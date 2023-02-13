@@ -66,7 +66,7 @@ function roundScoring(computerChoice) {
         playScorecard.textContent = `You: ${playerScore}`;
     }
     else if (roundVictor === 'computer') {
-        resultMsg.textContent = "Round Lost!";
+        resultMsg.textContent = `Round Lost! ${computerChoice} beats ${playerChoice}`;
         compScorecard.textContent = `Computer: ${computerScore}`;
 
     }else if (roundVictor === 'tie')
