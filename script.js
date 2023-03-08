@@ -7,8 +7,8 @@ let computerScore = 0;
 
 function getComputerChoice() {
     const choiceArr = ["Rock", "Paper", "Scissors"];
-    let rdmNo = Math.floor(Math.random() * 3) + 1;  
-    return choiceArr[(rdmNo - 1)];
+    let rdmNo = Math.floor(Math.random() * 3);  
+    return choiceArr[(rdmNo)];
 }
 
 function playRound(computerChoice, playerChoice) {
